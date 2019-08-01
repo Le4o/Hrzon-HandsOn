@@ -4,28 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListWaves">
-
-    <ImageButton android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
+    tools:context=".ListWinners">
+    <LinearLayout android:id="@+id/lty_header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_back"
-        android:layout_margin="10dp"
-        android:onClick="back"/>
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_list_waves"
-        style="@style/TextTitle"
-        android:layout_margin="10dp"
-        android:layout_centerHorizontal="true" />
+        <ImageButton android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_margin="10dp"
+            android:onClick="back"/>
 
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/btn_back"
+        android:layout_below="@+id/lty_header"
         android:fillViewport="true">
 
         <LinearLayout
@@ -33,7 +30,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ListView android:id="@+id/lsv_waves"
+            <ListView android:id="@+id/lsv_winners"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp">
@@ -43,5 +40,6 @@
         </LinearLayout>
 
     </ScrollView>
+
 
 </RelativeLayout>

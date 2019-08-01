@@ -30,4 +30,8 @@ public class Wave {
         this.surfist = surfist;
     }
 
+    @Override
+    public String toString(){
+        return "Wave: " + id + "\nSurfist: " + surfist.getName() + "\nCountry: " + surfist.getCountry();
+    }
 }

@@ -4,6 +4,8 @@
     <string name="txt_insert_surfist">Insert Surfist</string>
     <string name="txt_list_surfists">List Surfists</string>
     <string name="txt_insert_battery">List Batteries</string>
+    <string name="txt_list_waves">List Waves</string>
+    <string name="txt_insert_note">Insert Note</string>
     <string name="search_country">Search Country</string>
     <string name="txt_name">Name</string>
     <string name="txt_country">Country</string>
@@ -12,5 +14,11 @@
     <string name="delete">Delete</string>
     <string name="update">Update</string>
     <string name="battery">Battery</string>
+    <string name="insert_wave">Insert Wave</string>
+    <string name="note_one">Note 1</string>
+    <string name="note_two">Note 2</string>
+    <string name="note_three">Note 3</string>
+    <string name="btn_save_note">Save Note</string>
+    <string name="btn_winner">Winner</string>
 
 </resources>

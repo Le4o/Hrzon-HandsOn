@@ -12,15 +12,20 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_insert_surfist;
     private Button btn_list_surfists;
     private Button btn_insert_battery;
+    private Button btn_winner;
+    private DAO Dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Dao = new DAO(this);
+
         btn_insert_surfist = findViewById(R.id.btn_insert_surfist);
         btn_list_surfists = findViewById(R.id.btn_list_surfist);
         btn_insert_battery = findViewById(R.id.btn_insert_battery);
+        btn_winner = findViewById(R.id.btn_winner);
 
         btn_insert_surfist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ListBattery.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_winner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ListWinners.class);
                 startActivity(intent);
             }
         });

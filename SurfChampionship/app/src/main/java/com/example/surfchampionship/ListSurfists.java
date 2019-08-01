@@ -27,8 +27,7 @@ import java.util.List;
 public class ListSurfists extends AppCompatActivity {
 
     private ListView listView;
-    private SurfistDAO sDao;
-    private BatteryDAO bDao;
+    private DAO Dao;
     private List<Surfist> surfists;
     private List<Surfist> fSurfists = new ArrayList<>();
     private List<Surfist> surfistsForBattery = new ArrayList<>();
@@ -40,10 +39,9 @@ public class ListSurfists extends AppCompatActivity {
 
         listView = findViewById(R.id.lsv_surfists);
 
-        sDao = new SurfistDAO(this);
-        bDao = new BatteryDAO(this);
+        Dao = new DAO(this);
 
-        surfists = sDao.getAllSurfists();
+        surfists = Dao.getAllSurfists();
         fSurfists.addAll(surfists);
 
         ArrayAdapter<Surfist> adapter = new ArrayAdapter<Surfist>(this, android.R.layout.simple_list_item_multiple_choice, fSurfists);
@@ -83,7 +81,7 @@ public class ListSurfists extends AppCompatActivity {
     public void onResume(){
         super.onResume();
 
-        surfists = sDao.getAllSurfists();
+        surfists = Dao.getAllSurfists();
         fSurfists.clear();
         fSurfists.addAll(surfists);
         listView.invalidateViews();
@@ -142,7 +140,7 @@ public class ListSurfists extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         fSurfists.remove(surfistToDelete);
                         surfists.remove(surfistToDelete);
-                        sDao.deleteSurfist(surfistToDelete);
+                        Dao.deleteSurfist(surfistToDelete);
                         listView.invalidateViews();
                     }
                 }).create();
@@ -170,7 +168,7 @@ public class ListSurfists extends AppCompatActivity {
             }
 
         if (surfistsForBattery.size() == 2){
-            final long id = bDao.insertBattery(surfistsForBattery.get(0), surfistsForBattery.get(1));
+            final long id = Dao.insertBattery(surfistsForBattery.get(0), surfistsForBattery.get(1));
             Toast.makeText(this, "Battery created with id " + id, Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this, "Wrong number of surfists selected. Choose two.  ", Toast.LENGTH_SHORT).show();

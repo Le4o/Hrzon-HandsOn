@@ -13,7 +13,7 @@ public class InsertSurfist extends AppCompatActivity {
     private EditText edt_name;
     private EditText edt_country;
 
-    private SurfistDAO dao;
+    private DAO dao;
     private Surfist surfistUp = null;
 
     @Override
@@ -24,7 +24,7 @@ public class InsertSurfist extends AppCompatActivity {
         edt_name = findViewById(R.id.edt_name);
         edt_country = findViewById(R.id.edt_country);
 
-        dao = new SurfistDAO(this);
+        dao = new DAO(this);
 
         Intent intent = getIntent();
         if (intent.hasExtra("surfist")){
